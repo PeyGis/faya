@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<title>Fighting Fire with Data</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-3">
+			
+		</div>
+
+		<div class="col-md-6">
+
+			<div class="card">
+			  <img class="card-img-top" src="{{url_for('static', filename='banner.jpg')}}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title text-center">Predicting Burnt Areas</h5>
+	    			<!--Result Area-->
+					<div class="result" align="center">
+					    {% if result %}
+					        <br> Predicted Burnt Area:
+					           <p style="font-size:50px">{{ result }}</p>
+					    {% endif %}
+					</div>
+
+			    <p class="card-text">
+			    	<form action="{{ url_for('default_gateway') }}" method="POST">
+
+					  <div class="form-group">
+					    <label for="cl_vs_input">Climate VS</label>
+					    <input type="number" name="climate_vs" class="form-control" id="cl_vs_input">
+					  </div>
+
+					  <div class="form-group">
+					    <label for="cl_def_input">Climate DEF</label>
+					    <input type="number" name="climate_def" class="form-control" id="cl_def_input">
+					  </div>
+
+					    <div class="form-group">
+					    <label for="cl_vap_input">Climate VAP</label>
+					    <input type="number" name="climate_vap" class="form-control" id="cl_vap_input">
+					  </div>
+
+					    <div class="form-group">
+					    <label for="cl_aet_input">Climate AET</label>
+					    <input type="number" name="climate_aet" class="form-control" id="cl_aet_input">
+					  </div>
+
+					    <div class="form-group">
+					    <label for="precipitation_input">Precipitation</label>
+					    <input type="number" name="precipitation" class="form-control" id="precipitation_input">
+					  </div>
+
+					      <div class="form-group">
+					    <label for="landcover_input">Land Cover</label>
+					    <input type="number" name="landcover_5" class="form-control" id="landcover_input">
+					  </div>
+
+					  <button type="submit" class="btn btn-success">Submit</button>
+				</form>
+			  </div>
+			</div>
+
+			
+		</div>
+
+
+		<div class="col-md-3">
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<!--JavaScript Dependencies-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
