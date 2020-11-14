@@ -7,7 +7,7 @@ app = Flask(__name__, template_folder='templates')
 
 
 # Use joblib to load in the pre-trained model
-with open(f'model/finalized_model.pkl', 'rb') as f:
+with open(f'model/cat_finalized_model.pkl', 'rb') as f:
     model = joblib.load(f)
 
 # Default Flask API Gateway
