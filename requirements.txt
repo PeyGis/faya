@@ -1,4 +1,4 @@
-catboost==0.24.2
+catboost==0.24.1
 click==7.1.2
 cycler==0.10.0
 Flask==1.1.2
